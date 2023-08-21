@@ -30,9 +30,9 @@ An Awesome books store project, where you can enter the name and author of the b
 2-CSS
 3-JS
 
-## Live Demo <a name="live demo"></a>
+<!-- ## Live Demo <a name="live demo"></a>
 
-live Demo will be added soon
+live Demo will be added soon -->
 
 ### Tech Stack <a name="tech-stack"></a>
 
