@@ -32,7 +32,7 @@ An Awesome books store project, where you can enter the name and author of the b
 
 ## Live Demo <a name="live demo"></a>
 
-[Live Demo](https://mutesihope.github.io/Awesome-Books-List/)
+live Demo will be added soon
 
 ### Tech Stack <a name="tech-stack"></a>
 
