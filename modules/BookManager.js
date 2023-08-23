@@ -1,6 +1,6 @@
-import { Book } from './Book.js';
+import Book from './Book.js';
 
-export class BookManager {
+class BookManager {
   constructor() {
     this.books = this.loadBooks();
     this.bookData = document.getElementById('bookData');
@@ -9,15 +9,15 @@ export class BookManager {
     this.addBookLink = document.getElementById('addBookLink');
     this.contactLink = document.getElementById('contactLink');
 
-    this.booksLink.addEventListener('click', () => this.showSection('booksSection'));
-    this.addBookLink.addEventListener('click', () => this.showSection('addBookSection'));
-    this.contactLink.addEventListener('click', () => this.showSection('contactSection'));
+    this.booksLink.addEventListener('click', this.showSection.bind(this, 'booksSection'));
+    this.addBookLink.addEventListener('click', this.showSection.bind(this, 'addBookSection'));
+    this.contactLink.addEventListener('click', this.showSection.bind(this, 'contactSection'));
 
     this.bookForm.addEventListener('submit', this.addBook.bind(this));
     this.displayBooks();
   }
 
-  loadBooks() {
+  static loadBooks() {
     const storedBooks = localStorage.getItem('books');
     return storedBooks ? JSON.parse(storedBooks) : [];
   }
@@ -26,7 +26,7 @@ export class BookManager {
     localStorage.setItem('books', JSON.stringify(this.books));
   }
 
-  displayBooks = () => {
+  displayBooks() {
     this.bookData.innerHTML = '';
 
     this.books.forEach((book, index) => {
@@ -83,3 +83,5 @@ export class BookManager {
     });
   }
 }
+
+export default BookManager;
